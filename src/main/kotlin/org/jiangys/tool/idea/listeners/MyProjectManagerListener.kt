@@ -1,6 +1,6 @@
-package com.github.ysjiang4869.ideatool.listeners
+package org.jiangys.tool.idea.listeners
 
-import com.github.ysjiang4869.ideatool.services.MyProjectService
+import org.jiangys.tool.idea.services.MyProjectService
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener

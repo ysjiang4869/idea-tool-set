@@ -1,6 +1,6 @@
-package com.github.ysjiang4869.ideatool.services
+package org.jiangys.tool.idea.services
 
-import com.github.ysjiang4869.ideatool.MyBundle
+import org.jiangys.tool.idea.MyBundle
 
 class MyApplicationService {
 

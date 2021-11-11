@@ -1,4 +1,4 @@
-package com.github.ysjiang4869.ideatool
+package org.jiangys.tool.idea
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls
