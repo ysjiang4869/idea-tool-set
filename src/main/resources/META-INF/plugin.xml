@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.ysjiang4869.ideatool</id>
-    <name>IDEA-TOOL</name>
+    <name>IDEA-Tool-Set</name>
     <vendor>ysjiang4869</vendor>
 
     <!-- Product and plugin compatibility requirements -->
@@ -8,12 +8,12 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.ysjiang4869.ideatool.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.ysjiang4869.ideatool.services.MyProjectService"/>
+        <applicationService serviceImplementation="org.jiangys.tool.idea.services.MyApplicationService"/>
+        <projectService serviceImplementation="org.jiangys.tool.idea.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.ysjiang4869.ideatool.listeners.MyProjectManagerListener"
+        <listener class="org.jiangys.tool.idea.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>
