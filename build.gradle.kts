@@ -28,6 +28,8 @@ repositories {
 }
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.1")
 }
 
 // Configure gradle-intellij-plugin plugin.
@@ -60,6 +62,12 @@ detekt {
         html.enabled = false
         xml.enabled = false
         txt.enabled = false
+    }
+}
+
+configure<SourceSetContainer> {
+    named("main") {
+        java.srcDir("src/main/kotlin")
     }
 }
 

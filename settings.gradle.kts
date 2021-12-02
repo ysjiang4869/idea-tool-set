@@ -1,1 +1,1 @@
-rootProject.name = "IDEA-TOOL"
+rootProject.name = "idea-tool-set"
