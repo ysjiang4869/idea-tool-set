@@ -1,8 +1,10 @@
 package org.jiangys.tool.idea.utils
 
 import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
+import org.jiangys.tool.idea.PluginException
 
 object JsonUtil {
 
@@ -17,10 +19,9 @@ object JsonUtil {
         try {
             val node = mapper.readTree(text)
             return node.toString()
-        }catch (e:Exception){
-            throw RuntimeException("不是Json格式")
+        } catch (e: JsonProcessingException) {
+            throw PluginException("不是Json格式", e)
         }
-
     }
 
     fun toPrettyString(text: String): String {

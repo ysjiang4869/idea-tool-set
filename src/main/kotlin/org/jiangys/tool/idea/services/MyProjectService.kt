@@ -1,7 +1,7 @@
 package org.jiangys.tool.idea.services
 
-import org.jiangys.tool.idea.MyBundle
 import com.intellij.openapi.project.Project
+import org.jiangys.tool.idea.MyBundle
 
 class MyProjectService(project: Project) {
 
