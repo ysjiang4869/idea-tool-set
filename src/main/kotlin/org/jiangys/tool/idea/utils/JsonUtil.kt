@@ -8,7 +8,7 @@ import org.jiangys.tool.idea.PluginException
 
 object JsonUtil {
 
-    private val mapper = ObjectMapper()
+    val mapper = ObjectMapper()
 
     init {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
@@ -25,7 +25,11 @@ object JsonUtil {
     }
 
     fun toPrettyString(text: String): String {
-        val node = mapper.readTree(text)
-        return node.toPrettyString()
+        try {
+            val node = mapper.readTree(text)
+            return node.toPrettyString()
+        } catch (e: JsonProcessingException) {
+            throw PluginException("不是Json格式", e)
+        }
     }
 }

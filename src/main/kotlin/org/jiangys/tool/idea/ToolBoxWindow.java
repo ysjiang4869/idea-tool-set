@@ -1,11 +1,12 @@
 package org.jiangys.tool.idea;
 
 import com.intellij.openapi.wm.ToolWindow;
+import org.jiangys.tool.idea.services.TreeViewService;
 import org.jiangys.tool.idea.utils.JsonUtil;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  * @author jiangyuesong
@@ -20,18 +21,33 @@ public class ToolBoxWindow {
     private JButton deCompressButton;
     private JTextArea formattedJsonTextarea;
     private JTextArea simpleJsonTextArea;
+    private JTextArea treeTextArea;
+    private JTree tree1;
 
     public ToolBoxWindow(ToolWindow toolWindow) {
-        compressButton.addActionListener(new ActionListener() {
+        compressButton.addActionListener(e ->
+                simpleJsonTextArea.setText(JsonUtil.INSTANCE.toSimpleString(formattedJsonTextarea.getText())));
+        deCompressButton.addActionListener(e ->
+                formattedJsonTextarea.setText(JsonUtil.INSTANCE.toPrettyString(simpleJsonTextArea.getText())));
+
+        tree1.clearSelection();
+        TreeViewService treeViewService = new TreeViewService(tree1);
+
+        treeTextArea.getDocument().addDocumentListener(new DocumentListener() {
+
             @Override
-            public void actionPerformed(ActionEvent e) {
-                simpleJsonTextArea.setText(JsonUtil.INSTANCE.toSimpleString(formattedJsonTextarea.getText()));
+            public void removeUpdate(DocumentEvent e) {
+                treeViewService.updateModel(treeTextArea.getText());
             }
-        });
-        deCompressButton.addActionListener(new ActionListener() {
+
             @Override
-            public void actionPerformed(ActionEvent e) {
-                formattedJsonTextarea.setText(JsonUtil.INSTANCE.toPrettyString(simpleJsonTextArea.getText()));
+            public void insertUpdate(DocumentEvent e) {
+                treeViewService.updateModel(treeTextArea.getText());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent arg0) {
+                treeViewService.updateModel(treeTextArea.getText());
             }
         });
     }
