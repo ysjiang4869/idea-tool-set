@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>com.github.ysjiang4869.ideatool</id>
+    <id>org.jiangys.tool.idea.toolset</id>
     <name>IDEA-Tool-Set</name>
-    <vendor>ysjiang4869</vendor>
+    <vendor>jiangys</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->

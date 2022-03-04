@@ -6,31 +6,27 @@
 
 A tool for daily develop use!
 
-## Plan
+## Roadmap
 - [ ] json tool
   - [x] simplify and pretty
-  - [ ] treeView
+  - [x] treeView
   - [ ] to Java object
 - [ ] date tool
-  - [ ]parse timestamp
+  - [ ] parse timestamp
 - [ ] cron tool
+- [ ] Java object to random value json
 
 ... and so on, if you have any idea or need, please contact me.No more need to open your browser to use tool again!
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [x] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
-- [x] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [x] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [x] Set the Plugin ID in the above README badges.
-- [x] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [x] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
 
+## Plugin Description
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+This plugin is build for normal daily develop use. Include many useful tools every engineer need.
+You can handle json, convert time, debug cron, generate random json from class and so on.
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+Current version include tools can see our roadmap upper. 
+
+The key point is: you never need to open other browser tabs anymore!!
 <!-- Plugin description end -->
 
 ## Installation
@@ -50,3 +46,13 @@ To keep everything working, do not remove `<!-- ... -->` sections.
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
+
+## Template ToDo list
+- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
+- [x] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
+- [x] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
+- [x] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
+- [x] Set the Plugin ID in the above README badges.
+- [x] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
+- [x] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+
