@@ -1,12 +1,18 @@
 # IDEA-TOOL
 
 ![Build](https://github.com/ysjiang4869/IDEA-TOOL/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/18709.svg)](https://plugins.jetbrains.com/plugin/18709)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/18709.svg)](https://plugins.jetbrains.com/plugin/18709)
+[![Version](https://img.shields.io/jetbrains/plugin/v/18735.svg)](https://plugins.jetbrains.com/plugin/18709)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/18735.svg)](https://plugins.jetbrains.com/plugin/18709)
 
 A tool for daily develop use!
 
-## Roadmap
+## Plugin Description
+<!-- Plugin description -->
+
+This plugin is build for normal daily develop use. Include many useful tools every engineer need.
+You can handle json, convert time, debug cron, generate random json from class and so on.
+
+Tool List And Roadmap:
 - [ ] json tool
   - [x] simplify and pretty
   - [x] treeView
@@ -16,17 +22,9 @@ A tool for daily develop use!
 - [ ] cron tool
 - [ ] Java object to random value json
 
-... and so on, if you have any idea or need, please contact me.No more need to open your browser to use tool again!
+... , if you have any idea or need, please open pull request at [github](https://github.com/ysjiang4869/idea-tool-set/pulls).
+No more need to open your browser to use tool again!
 
-## Plugin Description
-<!-- Plugin description -->
-
-This plugin is build for normal daily develop use. Include many useful tools every engineer need.
-You can handle json, convert time, debug cron, generate random json from class and so on.
-
-Current version include tools can see our roadmap upper. 
-
-The key point is: you never need to open other browser tabs anymore!!
 <!-- Plugin description end -->
 
 ## Installation
