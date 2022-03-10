@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>org.jiangys.tool.idea.toolset</id>
-    <name>IDEA-Tool-Set</name>
+    <name>ToolBoxJ</name>
     <vendor>jiangys</vendor>
 
     <!-- Product and plugin compatibility requirements -->
