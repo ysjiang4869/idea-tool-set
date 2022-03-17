@@ -1,8 +1,8 @@
 # IDEA-TOOL
 
 ![Build](https://github.com/ysjiang4869/IDEA-TOOL/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/18735.svg)](https://plugins.jetbrains.com/plugin/18709)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/18735.svg)](https://plugins.jetbrains.com/plugin/18709)
+[![Version](https://img.shields.io/jetbrains/plugin/v/18735.svg)](https://plugins.jetbrains.com/plugin/18735)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/18735.svg)](https://plugins.jetbrains.com/plugin/18735)
 
 A tool for daily develop use!
 
