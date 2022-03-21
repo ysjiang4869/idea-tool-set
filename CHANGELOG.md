@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [1.0.0]
+### Added
+- cron tools: now you can parse cron and see next 7 time. Also has tips for different platform:Unix, Java Spring or Quartz
+
+### Changed
+- As the plugin and upload to plugin store, decided bump version to 1.0.0 🎊
+- change some info problem
+
 ## [0.0.3]
 ### Added
 - json tree view
