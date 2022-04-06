@@ -6,7 +6,6 @@ import com.cronutils.model.CronType
 import com.cronutils.model.definition.CronDefinitionBuilder
 import com.cronutils.model.time.ExecutionTime
 import com.cronutils.parser.CronParser
-import org.jiangys.tool.idea.PluginException
 import org.jiangys.tool.idea.ToolBoxWindow
 import java.awt.event.ActionListener
 import java.time.ZonedDateTime
@@ -49,11 +48,15 @@ class CrontabService(private val mainWindow: ToolBoxWindow) {
         }
 
         mainWindow.showTimesButton.addActionListener(ActionListener {
-            val cronType: CronType = when (cronGroup.selection.actionCommand) {
+
+            val cronType: CronType = when (cronGroup.selection?.actionCommand) {
                 "linux" -> CronType.UNIX
                 "javaSpring" -> CronType.SPRING
                 "javaQuartz" -> CronType.QUARTZ
-                else -> throw PluginException("Not Support Cron Type", null)
+                else -> {
+                    mainWindow.cronNextTimes.text = ""
+                    return@ActionListener
+                }
             }
             val cronDefinition = CronDefinitionBuilder.instanceDefinitionFor(cronType)
             val cronParser = CronParser(cronDefinition)
