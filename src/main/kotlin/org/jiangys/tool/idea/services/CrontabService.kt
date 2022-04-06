@@ -1,6 +1,7 @@
 package org.jiangys.tool.idea.services
 
 import com.cronutils.descriptor.CronDescriptor
+import com.cronutils.model.Cron
 import com.cronutils.model.CronType
 import com.cronutils.model.definition.CronDefinitionBuilder
 import com.cronutils.model.time.ExecutionTime
@@ -56,8 +57,9 @@ class CrontabService(private val mainWindow: ToolBoxWindow) {
             }
             val cronDefinition = CronDefinitionBuilder.instanceDefinitionFor(cronType)
             val cronParser = CronParser(cronDefinition)
-            val cron = cronParser.parse(mainWindow.cronTextField.text)
+            val cron: Cron
             try {
+                cron = cronParser.parse(mainWindow.cronTextField.text)
                 cron.validate()
             } catch (exception: IllegalArgumentException) {
                 mainWindow.cronNextTimes.text = "cron express not correct"

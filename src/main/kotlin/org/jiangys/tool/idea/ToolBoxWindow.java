@@ -16,8 +16,8 @@ import javax.swing.event.DocumentListener;
 public class ToolBoxWindow {
 
     private JPanel rootPanel;
-    private JTabbedPane tabbedPane1;
-    private JTabbedPane tabbedPane2;
+    private JTabbedPane jsonTabbedPane;
+    private JTabbedPane cronTabbedPane;
     private JButton compressButton;
     private JButton deCompressButton;
     private JTextArea formattedJsonTextarea;
@@ -33,10 +33,21 @@ public class ToolBoxWindow {
     private JTextPane cronExplain;
 
     public ToolBoxWindow(ToolWindow toolWindow) {
-        compressButton.addActionListener(e ->
-                simpleJsonTextArea.setText(JsonUtil.INSTANCE.toSimpleString(formattedJsonTextarea.getText())));
-        deCompressButton.addActionListener(e ->
-                formattedJsonTextarea.setText(JsonUtil.INSTANCE.toPrettyString(simpleJsonTextArea.getText())));
+        compressButton.addActionListener(e -> {
+            try {
+                simpleJsonTextArea.setText(JsonUtil.INSTANCE.toSimpleString(formattedJsonTextarea.getText()));
+                formattedJsonTextarea.setText(JsonUtil.INSTANCE.toPrettyString(formattedJsonTextarea.getText()));
+            } catch (PluginException ex) {
+                simpleJsonTextArea.setText(ex.getMessage());
+            }
+        });
+        deCompressButton.addActionListener(e -> {
+            try {
+                formattedJsonTextarea.setText(JsonUtil.INSTANCE.toPrettyString(simpleJsonTextArea.getText()));
+            } catch (PluginException ex) {
+                formattedJsonTextarea.setText(ex.getMessage());
+            }
+        });
 
         tree1.clearSelection();
         TreeViewService treeViewService = new TreeViewService(tree1);
@@ -67,37 +78,7 @@ public class ToolBoxWindow {
         return rootPanel;
     }
 
-    public JTabbedPane getTabbedPane1() {
-        return tabbedPane1;
-    }
 
-    public JTabbedPane getTabbedPane2() {
-        return tabbedPane2;
-    }
-
-    public JButton getCompressButton() {
-        return compressButton;
-    }
-
-    public JButton getDeCompressButton() {
-        return deCompressButton;
-    }
-
-    public JTextArea getFormattedJsonTextarea() {
-        return formattedJsonTextarea;
-    }
-
-    public JTextArea getSimpleJsonTextArea() {
-        return simpleJsonTextArea;
-    }
-
-    public JTextArea getTreeTextArea() {
-        return treeTextArea;
-    }
-
-    public JTree getTree1() {
-        return tree1;
-    }
 
     public JRadioButton getLinuxRadioButton() {
         return linuxRadioButton;

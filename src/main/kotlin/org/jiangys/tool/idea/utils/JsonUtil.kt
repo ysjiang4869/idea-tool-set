@@ -20,7 +20,7 @@ object JsonUtil {
             val node = mapper.readTree(text)
             return node.toString()
         } catch (e: JsonProcessingException) {
-            throw PluginException("不是Json格式", e)
+            throw PluginException("Not Json Format", e)
         }
     }
 
@@ -29,7 +29,7 @@ object JsonUtil {
             val node = mapper.readTree(text)
             return node.toPrettyString()
         } catch (e: JsonProcessingException) {
-            throw PluginException("不是Json格式", e)
+            throw PluginException("Not Json Format", e)
         }
     }
 }
