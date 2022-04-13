@@ -31,6 +31,24 @@ public class ToolBoxWindow {
     private JButton showTimesButton;
     private JTextArea cronNextTimes;
     private JTextPane cronExplain;
+    private JTextField a1649818893724000TextField;
+    private JComboBox comboBox1;
+    private JButton copyButton;
+    private JButton transformButton;
+    private JTextField a1649818893724000TextField2;
+    private JComboBox comboBox2;
+    private JButton transformButton1;
+    private JTextField a2022041311TextField;
+    private JButton transformButton2;
+    private JComboBox comboBox3;
+    private JTextField a1649818893724000TextField1;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JTextField textField5;
 
     public ToolBoxWindow(ToolWindow toolWindow) {
         compressButton.addActionListener(e -> {
