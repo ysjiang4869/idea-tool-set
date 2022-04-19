@@ -2,6 +2,7 @@ package org.jiangys.tool.idea;
 
 import com.intellij.openapi.wm.ToolWindow;
 import org.jiangys.tool.idea.services.CrontabService;
+import org.jiangys.tool.idea.services.TabSelectedService;
 import org.jiangys.tool.idea.services.TreeViewService;
 import org.jiangys.tool.idea.utils.JsonUtil;
 
@@ -31,18 +32,18 @@ public class ToolBoxWindow {
     private JButton showTimesButton;
     private JTextArea cronNextTimes;
     private JTextPane cronExplain;
-    private JTextField a1649818893724000TextField;
-    private JComboBox comboBox1;
+    private JTextField currentTimeTextField;
+    private JComboBox currentTimeUnitCombox;
     private JButton copyButton;
-    private JButton transformButton;
-    private JTextField a1649818893724000TextField2;
-    private JComboBox comboBox2;
-    private JButton transformButton1;
-    private JTextField a2022041311TextField;
+    private JButton toTimeTransformButton1;
+    private JTextField inputTimestampTextField;
+    private JComboBox timestampUnitComboBox;
+    private JButton toTimeTransformButton2;
+    private JTextField timeToTimestampTimeTextField;
     private JButton transformButton2;
-    private JComboBox comboBox3;
-    private JTextField a1649818893724000TextField1;
-    private JComboBox comboBox4;
+    private JComboBox timeToTimestampZoneCcomboBox;
+    private JTextField timeToTimestampResultTextField;
+    private JComboBox timeToTimestampUnitComboBox;
     private JComboBox comboBox5;
     private JTextField textField1;
     private JTextField textField2;
@@ -90,6 +91,9 @@ public class ToolBoxWindow {
 
         CrontabService crontabService = new CrontabService(this);
         crontabService.init();
+
+        TabSelectedService tabSelectedService = new TabSelectedService(this);
+        tabSelectedService.init();
     }
 
     public JPanel getRootPanel() {
@@ -124,5 +128,82 @@ public class ToolBoxWindow {
 
     public JTextPane getCronExplain() {
         return cronExplain;
+    }
+
+    public JTabbedPane getJsonTabbedPane() {
+        return jsonTabbedPane;
+    }
+
+
+    public JTextField getCurrentTimeTextField() {
+        return currentTimeTextField;
+    }
+
+    public JComboBox getCurrentTimeUnitCombox() {
+        return currentTimeUnitCombox;
+    }
+
+    public JButton getCopyButton() {
+        return copyButton;
+    }
+
+    public JButton getToTimeTransformButton1() {
+        return toTimeTransformButton1;
+    }
+
+    public JTextField getInputTimestampTextField() {
+        return inputTimestampTextField;
+    }
+
+    public JComboBox getTimestampUnitComboBox() {
+        return timestampUnitComboBox;
+    }
+
+    public JButton getToTimeTransformButton2() {
+        return toTimeTransformButton2;
+    }
+
+    public JTextField getTimeToTimestampTimeTextField() {
+        return timeToTimestampTimeTextField;
+    }
+
+    public JButton getTransformButton2() {
+        return transformButton2;
+    }
+
+    public JComboBox getTimeToTimestampZoneCcomboBox() {
+        return timeToTimestampZoneCcomboBox;
+    }
+
+    public JTextField getTimeToTimestampResultTextField() {
+        return timeToTimestampResultTextField;
+    }
+
+    public JComboBox getTimeToTimestampUnitComboBox() {
+        return timeToTimestampUnitComboBox;
+    }
+
+    public JComboBox getComboBox5() {
+        return comboBox5;
+    }
+
+    public JTextField getTextField1() {
+        return textField1;
+    }
+
+    public JTextField getTextField2() {
+        return textField2;
+    }
+
+    public JTextField getTextField3() {
+        return textField3;
+    }
+
+    public JTextField getTextField4() {
+        return textField4;
+    }
+
+    public JTextField getTextField5() {
+        return textField5;
     }
 }

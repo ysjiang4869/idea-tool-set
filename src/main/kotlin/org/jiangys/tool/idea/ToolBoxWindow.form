@@ -299,13 +299,13 @@
                           <text value="Current Time"/>
                         </properties>
                       </component>
-                      <component id="9c373" class="javax.swing.JTextField" binding="a1649818893724000TextField" default-binding="true">
+                      <component id="9c373" class="javax.swing.JTextField" binding="currentTimeTextField">
                         <constraints/>
                         <properties>
                           <text value="1649818893724000"/>
                         </properties>
                       </component>
-                      <component id="13ba5" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+                      <component id="13ba5" class="javax.swing.JComboBox" binding="currentTimeUnitCombox">
                         <constraints/>
                         <properties>
                           <model>
@@ -320,7 +320,7 @@
                           <text value="Copy"/>
                         </properties>
                       </component>
-                      <component id="327d2" class="javax.swing.JButton" binding="transformButton" default-binding="true">
+                      <component id="327d2" class="javax.swing.JButton" binding="toTimeTransformButton1">
                         <constraints/>
                         <properties>
                           <text value="Transform"/>
@@ -341,13 +341,13 @@
                           <text value="Timestamp"/>
                         </properties>
                       </component>
-                      <component id="374f6" class="javax.swing.JTextField" binding="a1649818893724000TextField2" default-binding="true">
+                      <component id="374f6" class="javax.swing.JTextField" binding="inputTimestampTextField">
                         <constraints/>
                         <properties>
                           <text value="1649818893724000"/>
                         </properties>
                       </component>
-                      <component id="ee8c3" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+                      <component id="ee8c3" class="javax.swing.JComboBox" binding="timestampUnitComboBox">
                         <constraints/>
                         <properties>
                           <model>
@@ -356,7 +356,7 @@
                           </model>
                         </properties>
                       </component>
-                      <component id="6af17" class="javax.swing.JButton" binding="transformButton1" default-binding="true">
+                      <component id="6af17" class="javax.swing.JButton" binding="toTimeTransformButton2">
                         <constraints/>
                         <properties>
                           <text value="Transform"/>
@@ -377,13 +377,13 @@
                           <text value="Time"/>
                         </properties>
                       </component>
-                      <component id="798fb" class="javax.swing.JTextField" binding="a2022041311TextField" default-binding="true">
+                      <component id="798fb" class="javax.swing.JTextField" binding="timeToTimestampTimeTextField">
                         <constraints/>
                         <properties>
                           <text value="2022-04-13 11:01:33"/>
                         </properties>
                       </component>
-                      <component id="a7166" class="javax.swing.JComboBox" binding="comboBox3" default-binding="true">
+                      <component id="a7166" class="javax.swing.JComboBox" binding="timeToTimestampZoneCcomboBox">
                         <constraints/>
                         <properties>
                           <model/>
@@ -395,13 +395,14 @@
                           <text value="Transform"/>
                         </properties>
                       </component>
-                      <component id="7bcb" class="javax.swing.JTextField" binding="a1649818893724000TextField1" default-binding="true">
+                      <component id="7bcb" class="javax.swing.JTextField" binding="timeToTimestampResultTextField">
                         <constraints/>
                         <properties>
+                          <editable value="false"/>
                           <text value="1649818893724000"/>
                         </properties>
                       </component>
-                      <component id="47268" class="javax.swing.JComboBox" binding="comboBox4" default-binding="true">
+                      <component id="47268" class="javax.swing.JComboBox" binding="timeToTimestampUnitComboBox">
                         <constraints/>
                         <properties>
                           <model>
