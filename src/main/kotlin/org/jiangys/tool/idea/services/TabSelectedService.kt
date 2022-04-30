@@ -3,11 +3,11 @@ package org.jiangys.tool.idea.services
 import org.jiangys.tool.idea.ToolBoxWindow
 import javax.swing.JTabbedPane
 
-class TabSelectedService(private val mainWindow: ToolBoxWindow) {
+class TabSelectedService(mainWindow: ToolBoxWindow) {
 
     private val pane: JTabbedPane = mainWindow.jsonTabbedPane;
-    private val timerService = TimeService(mainWindow)
-    fun init() {
+    private val tabs:List<TabService> = listOf(mainWindow.timeService)
+    init{
         pane.addChangeListener { e ->
             val sourceTabbedPane = e.source as JTabbedPane
             val index = sourceTabbedPane.selectedIndex
@@ -15,14 +15,9 @@ class TabSelectedService(private val mainWindow: ToolBoxWindow) {
         }
         val index = pane.selectedIndex
         handleTabChanged(index)
-
     }
 
     private fun handleTabChanged(index: Int) {
-        when (index) {
-            pane.indexOfTab("Json") -> timerService.stopUpdate()
-            pane.indexOfTab("Cron") -> timerService.stopUpdate()
-            pane.indexOfTab("Time") -> timerService.startUpdate()
-        }
+        tabs.forEach { if(pane.indexOfTab(it.tabName())==index) it.initActive() else it.deActive() }
     }
 }

@@ -286,7 +286,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <grid id="1b5d1" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                  <grid id="1b5d1" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -302,6 +302,7 @@
                       <component id="9c373" class="javax.swing.JTextField" binding="currentTimeTextField">
                         <constraints/>
                         <properties>
+                          <editable value="false"/>
                           <text value="1649818893724000"/>
                         </properties>
                       </component>
@@ -328,7 +329,7 @@
                       </component>
                     </children>
                   </grid>
-                  <grid id="8630" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                  <grid id="8630" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -364,7 +365,7 @@
                       </component>
                     </children>
                   </grid>
-                  <grid id="113a8" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                  <grid id="113a8" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
                     <constraints>
                       <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>

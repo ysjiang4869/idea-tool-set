@@ -13,11 +13,11 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 import javax.swing.ButtonGroup
 
-class CrontabService(private val mainWindow: ToolBoxWindow) {
+class CrontabService(private val mainWindow: ToolBoxWindow) : TabService {
 
     private val dateFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
 
-    fun init() {
+    init {
         mainWindow.cronNextTimes.lineWrap = true
         mainWindow.cronNextTimes.isEditable = false
         mainWindow.cronExplain.isEditable = false
@@ -84,5 +84,17 @@ class CrontabService(private val mainWindow: ToolBoxWindow) {
                 zonedDateTime = nextTime.get().plusNanos(1)
             }
         })
+    }
+
+    override fun initActive() {
+        TODO("Not yet implemented")
+    }
+
+    override fun deActive() {
+        TODO("Not yet implemented")
+    }
+
+    override fun tabName(): String {
+        return "Cron"
     }
 }

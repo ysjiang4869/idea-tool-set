@@ -3,6 +3,7 @@ package org.jiangys.tool.idea;
 import com.intellij.openapi.wm.ToolWindow;
 import org.jiangys.tool.idea.services.CrontabService;
 import org.jiangys.tool.idea.services.TabSelectedService;
+import org.jiangys.tool.idea.services.TimeService;
 import org.jiangys.tool.idea.services.TreeViewService;
 import org.jiangys.tool.idea.utils.JsonUtil;
 
@@ -15,6 +16,11 @@ import javax.swing.event.DocumentListener;
  * @date 2022/2/18
  */
 public class ToolBoxWindow {
+
+    private final TimeService timeService;
+    private final CrontabService crontabService;
+    private final TabSelectedService tabSelectedService;
+    private final TreeViewService treeViewService;
 
     private JPanel rootPanel;
     private JTabbedPane jsonTabbedPane;
@@ -51,6 +57,7 @@ public class ToolBoxWindow {
     private JTextField textField4;
     private JTextField textField5;
 
+
     public ToolBoxWindow(ToolWindow toolWindow) {
         compressButton.addActionListener(e -> {
             try {
@@ -69,7 +76,7 @@ public class ToolBoxWindow {
         });
 
         tree1.clearSelection();
-        TreeViewService treeViewService = new TreeViewService(tree1);
+        treeViewService = new TreeViewService(tree1);
 
         treeTextArea.getDocument().addDocumentListener(new DocumentListener() {
 
@@ -89,17 +96,14 @@ public class ToolBoxWindow {
             }
         });
 
-        CrontabService crontabService = new CrontabService(this);
-        crontabService.init();
-
-        TabSelectedService tabSelectedService = new TabSelectedService(this);
-        tabSelectedService.init();
+        crontabService = new CrontabService(this);
+        timeService = new TimeService(this);
+        tabSelectedService = new TabSelectedService(this);
     }
 
     public JPanel getRootPanel() {
         return rootPanel;
     }
-
 
 
     public JRadioButton getLinuxRadioButton() {
@@ -205,5 +209,9 @@ public class ToolBoxWindow {
 
     public JTextField getTextField5() {
         return textField5;
+    }
+
+    public TimeService getTimeService() {
+        return timeService;
     }
 }
