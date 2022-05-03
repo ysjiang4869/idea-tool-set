@@ -50,12 +50,12 @@ public class ToolBoxWindow {
     private JComboBox timeToTimestampZoneCcomboBox;
     private JTextField timeToTimestampResultTextField;
     private JComboBox timeToTimestampUnitComboBox;
-    private JComboBox comboBox5;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JComboBox timeShowZoneComboBox;
+    private JTextField showTimeTextField5;
+    private JTextField showTimeTextField4;
+    private JTextField showTimeTextField3;
+    private JTextField showTimeTextField2;
+    private JTextField showTimeTextField1;
 
 
     public ToolBoxWindow(ToolWindow toolWindow) {
@@ -188,30 +188,54 @@ public class ToolBoxWindow {
     }
 
     public JComboBox getComboBox5() {
-        return comboBox5;
+        return timeShowZoneComboBox;
     }
 
     public JTextField getTextField1() {
-        return textField1;
+        return showTimeTextField5;
     }
 
     public JTextField getTextField2() {
-        return textField2;
+        return showTimeTextField4;
     }
 
     public JTextField getTextField3() {
-        return textField3;
+        return showTimeTextField3;
     }
 
     public JTextField getTextField4() {
-        return textField4;
+        return showTimeTextField2;
     }
 
     public JTextField getTextField5() {
-        return textField5;
+        return showTimeTextField1;
     }
 
     public TimeService getTimeService() {
         return timeService;
+    }
+
+    public JComboBox getTimeShowZoneComboBox() {
+        return timeShowZoneComboBox;
+    }
+
+    public JTextField getShowTimeTextField5() {
+        return showTimeTextField5;
+    }
+
+    public JTextField getShowTimeTextField4() {
+        return showTimeTextField4;
+    }
+
+    public JTextField getShowTimeTextField3() {
+        return showTimeTextField3;
+    }
+
+    public JTextField getShowTimeTextField2() {
+        return showTimeTextField2;
+    }
+
+    public JTextField getShowTimeTextField1() {
+        return showTimeTextField1;
     }
 }
