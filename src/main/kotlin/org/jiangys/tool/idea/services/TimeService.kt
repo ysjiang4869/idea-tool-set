@@ -3,10 +3,7 @@ package org.jiangys.tool.idea.services
 import org.jiangys.tool.idea.ToolBoxWindow
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
-import java.time.Instant
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.ZonedDateTime
+import java.time.*
 import java.time.format.DateTimeFormatter
 import java.util.*
 import java.util.concurrent.Executors
@@ -22,6 +19,7 @@ class TimeService(private val mainWindow: ToolBoxWindow) : TabService {
     private var curFuture: ScheduledFuture<*>? = null
     private val dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
     private val defaultSelectZone = "UTC${ZonedDateTime.now().offset.id}"
+    private var showTimestamp: Long = System.currentTimeMillis()
 
     private val showTimeAreaFormatters = listOf<DateTimeFormatter>(
         dateTimeFormatter,
@@ -34,9 +32,8 @@ class TimeService(private val mainWindow: ToolBoxWindow) : TabService {
     init {
         val now = LocalDateTime.now()
         val zones = ZoneId.getAvailableZoneIds().stream().map { ZoneId.of(it) }
-            .sorted(ZoneComparator())
-            .map { "UTC${now.atZone(it).offset.id}" }
-            .collect(Collectors.toSet())
+            .map { val zone = now.atZone(it).offset.id; if (zone == "Z") "UTC" else "UTC$zone" }
+            .collect(Collectors.toSet()).sortedBy { now.atZone(ZoneId.of(it)).offset }
         zones.forEach {
             mainWindow.timeToTimestampZoneCcomboBox.addItem(it)
             mainWindow.timeShowZoneComboBox.addItem(it)
@@ -47,13 +44,22 @@ class TimeService(private val mainWindow: ToolBoxWindow) : TabService {
         //actions
         mainWindow.copyButton.addActionListener {
             val stringSelection = StringSelection(mainWindow.currentTimeTextField.text)
-            val clipboard = Toolkit.getDefaultToolkit().getSystemClipboard()
+            val clipboard = Toolkit.getDefaultToolkit().systemClipboard
             clipboard.setContents(stringSelection, null)
         }
 
-        mainWindow.toTimeTransformButton1.addActionListener{
-            transformToTime(getTimeInMills(mainWindow.currentTimeUnitCombox,mainWindow.currentTimeTextField.text))
+        mainWindow.toTimeTransformButton1.addActionListener {
+            showTimestamp = getTimeInMills(mainWindow.currentTimeUnitCombox, mainWindow.currentTimeTextField.text)
+            transformToTime(showTimestamp)
         }
+        mainWindow.toTimeTransformButton2.addActionListener {
+            showTimestamp = getTimeInMills(mainWindow.timestampUnitComboBox, mainWindow.inputTimestampTextField.text)
+            transformToTime(showTimestamp)
+        }
+
+        mainWindow.timeShowZoneComboBox.addActionListener { transformToTime(showTimestamp) }
+
+        mainWindow.transformButton2.addActionListener { transformTimeToTimestamp() }
     }
 
     override fun initActive() {
@@ -61,6 +67,9 @@ class TimeService(private val mainWindow: ToolBoxWindow) : TabService {
         mainWindow.currentTimeTextField.text = getTimestampString(mainWindow.currentTimeUnitCombox, timestamp)
         mainWindow.inputTimestampTextField.text = getTimestampString(mainWindow.timestampUnitComboBox, timestamp)
         mainWindow.timeToTimestampTimeTextField.text = LocalDateTime.now().format(dateTimeFormatter)
+        showTimestamp = System.currentTimeMillis()
+        transformToTime(showTimestamp)
+        transformTimeToTimestamp()
         startUpdate()
     }
 
@@ -85,17 +94,8 @@ class TimeService(private val mainWindow: ToolBoxWindow) : TabService {
         return if ("s" == comboBox.selectedItem?.toString()) (time / 1000).toString() else time.toString()
     }
 
-    private fun getTimeInMills(comboBox: JComboBox<*>, time: String):Long{
+    private fun getTimeInMills(comboBox: JComboBox<*>, time: String): Long {
         return if ("s" == comboBox.selectedItem?.toString()) (time.toLong() * 1000) else time.toLong()
-    }
-
-    private class ZoneComparator : Comparator<ZoneId?> {
-        override fun compare(zoneId1: ZoneId?, zoneId2: ZoneId?): Int {
-            val now = LocalDateTime.now()
-            val offset1 = now.atZone(zoneId1).offset
-            val offset2 = now.atZone(zoneId2).offset
-            return offset1.compareTo(offset2)
-        }
     }
 
     private fun transformToTime(timestamp: Long) {
@@ -108,6 +108,21 @@ class TimeService(private val mainWindow: ToolBoxWindow) : TabService {
         mainWindow.showTimeTextField3.text = showTimeAreaFormatters[2].format(zonedDateTime)
         mainWindow.showTimeTextField4.text = showTimeAreaFormatters[3].format(localDateTime)
         mainWindow.showTimeTextField5.text = showTimeAreaFormatters[4].format(zonedDateTime)
+    }
+
+    private fun transformTimeToTimestamp() {
+        try {
+            val instant =
+                LocalDateTime.parse(mainWindow.timeToTimestampTimeTextField.text, dateTimeFormatter).toInstant(
+                        ZoneId.of(mainWindow.timeToTimestampZoneCcomboBox.selectedItem?.toString()).rules.getOffset(
+                            LocalDateTime.now()
+                        )
+                    ).toEpochMilli()
+            mainWindow.timeToTimestampResultTextField.text =
+                if ("s" == mainWindow.timeToTimestampUnitComboBox.selectedItem?.toString()) (instant / 1000).toString() else instant.toString()
+        } catch (e: Exception) {
+            mainWindow.timeToTimestampResultTextField.text = "time format error"
+        }
     }
 
 }

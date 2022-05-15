@@ -390,7 +390,7 @@
                           <model/>
                         </properties>
                       </component>
-                      <component id="ea99b" class="javax.swing.JButton" binding="transformButton2" default-binding="true">
+                      <component id="ea99b" class="javax.swing.JButton" binding="transformTimeToTimestampButton">
                         <constraints/>
                         <properties>
                           <text value="Transform"/>
@@ -457,7 +457,9 @@
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <editable value="false"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>
@@ -475,7 +477,9 @@
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <editable value="false"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>
@@ -493,7 +497,9 @@
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <editable value="false"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>
@@ -511,7 +517,9 @@
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <editable value="false"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>
@@ -529,7 +537,9 @@
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <editable value="false"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>

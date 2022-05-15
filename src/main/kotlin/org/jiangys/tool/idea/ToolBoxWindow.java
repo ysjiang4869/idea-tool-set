@@ -46,7 +46,7 @@ public class ToolBoxWindow {
     private JComboBox timestampUnitComboBox;
     private JButton toTimeTransformButton2;
     private JTextField timeToTimestampTimeTextField;
-    private JButton transformButton2;
+    private JButton transformTimeToTimestampButton;
     private JComboBox timeToTimestampZoneCcomboBox;
     private JTextField timeToTimestampResultTextField;
     private JComboBox timeToTimestampUnitComboBox;
@@ -172,7 +172,7 @@ public class ToolBoxWindow {
     }
 
     public JButton getTransformButton2() {
-        return transformButton2;
+        return transformTimeToTimestampButton;
     }
 
     public JComboBox getTimeToTimestampZoneCcomboBox() {
@@ -237,5 +237,9 @@ public class ToolBoxWindow {
 
     public JTextField getShowTimeTextField1() {
         return showTimeTextField1;
+    }
+
+    public JButton getTransformTimeToTimestampButton() {
+        return transformTimeToTimestampButton;
     }
 }
