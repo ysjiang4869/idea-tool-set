@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [1.2.0]
+### Added
+- TimeUtils: get current timestamp ,timestamp to format time, and vice versa. Also support timeZone!
+
+### Changed
+- add compress/depress arrow base issue #3 
+- fix some bug of cron tab
+
 ## [1.0.0]
 ### Added
 - cron tools: now you can parse cron and see next 7 time. Also has tips for different platform:Unix, Java Spring or Quartz
