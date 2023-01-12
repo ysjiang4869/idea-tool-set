@@ -7,6 +7,7 @@ import com.cronutils.model.definition.CronDefinitionBuilder
 import com.cronutils.model.time.ExecutionTime
 import com.cronutils.parser.CronParser
 import org.jiangys.tool.idea.ToolBoxWindow
+import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
@@ -84,6 +85,17 @@ class CrontabService(private val mainWindow: ToolBoxWindow) : TabService {
                 zonedDateTime = nextTime.get().plusNanos(1)
             }
         })
+        mainWindow.linuxRadioButton.isSelected = true
+        cronGroup.setSelected(mainWindow.linuxRadioButton.model, true)
+        mainWindow.linuxRadioButton.actionListeners.forEach { listener ->
+            listener.actionPerformed(
+                ActionEvent(
+                    this,
+                    ActionEvent.ACTION_PERFORMED,
+                    ""
+                )
+            )
+        }
     }
 
     override fun initActive() {
