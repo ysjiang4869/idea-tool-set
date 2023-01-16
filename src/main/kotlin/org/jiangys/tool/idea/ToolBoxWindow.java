@@ -56,6 +56,20 @@ public class ToolBoxWindow {
     private JTextField showTimeTextField3;
     private JTextField showTimeTextField2;
     private JTextField showTimeTextField1;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextArea textArea1;
+    private JButton button1;
+    private JButton setAsTodayButton;
+    private JButton setAsTodayButton1;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JTextField textField9;
+    private JButton button2;
 
 
     public ToolBoxWindow(ToolWindow toolWindow) {
