@@ -23,8 +23,8 @@ public class ToolBoxWindow {
     private final TreeViewService treeViewService;
 
     private JPanel rootPanel;
-    private JTabbedPane jsonTabbedPane;
-    private JTabbedPane cronTabbedPane;
+    private JTabbedPane mainTabbedPane;
+    private JTabbedPane jsonToolTabbedPane;
     private JButton compressButton;
     private JButton deCompressButton;
     private JTextArea formattedJsonTextarea;
@@ -56,20 +56,25 @@ public class ToolBoxWindow {
     private JTextField showTimeTextField3;
     private JTextField showTimeTextField2;
     private JTextField showTimeTextField1;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextArea textArea1;
-    private JButton button1;
-    private JButton setAsTodayButton;
+    private JTextField diffDayYearText1;
+    private JTextField diffDayMonthText1;
+    private JTextField diffDayDayText1;
+    private JTextField diffDayYearText2;
+    private JTextField diffDayMonthText2;
+    private JTextField diffDayDayText2;
+    private JTextArea diffDayResultText;
+    private JButton diifCalculateButton;
     private JButton setAsTodayButton1;
-    private JTextField textField7;
-    private JTextField textField8;
-    private JTextField textField9;
-    private JButton button2;
+    private JButton setAsTodayButton2;
+    private JTextField addSubDayYearText;
+    private JTextField addSubDayMonthText;
+    private JTextField addSubDayDayText;
+    private JButton setAsTodayButton3;
+    private JComboBox addSubDayTypeComboBox;
+    private JTextField addSubDayNumberText;
+    private JComboBox addSubDayUnitComboBox;
+    private JButton addSubDayCalculateButton;
+    private JTextArea addSubDayResultText;
 
 
     public ToolBoxWindow(ToolWindow toolWindow) {
@@ -149,7 +154,7 @@ public class ToolBoxWindow {
     }
 
     public JTabbedPane getJsonTabbedPane() {
-        return jsonTabbedPane;
+        return mainTabbedPane;
     }
 
 
