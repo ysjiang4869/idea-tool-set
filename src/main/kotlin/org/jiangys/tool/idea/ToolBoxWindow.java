@@ -74,6 +74,10 @@ public class ToolBoxWindow {
     private JComboBox addSubDayUnitComboBox;
     private JButton addSubDayCalculateButton;
     private JTextArea addSubDayResultText;
+    private JTextArea textArea1;
+    private JTextArea instructions1FirstOpenTextArea;
+    private JButton transformButton;
+    private JTextArea textArea2;
 
 
     public ToolBoxWindow(ToolWindow toolWindow) {
