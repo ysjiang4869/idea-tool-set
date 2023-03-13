@@ -1,10 +1,7 @@
 package org.jiangys.tool.idea;
 
 import com.intellij.openapi.wm.ToolWindow;
-import org.jiangys.tool.idea.services.CrontabService;
-import org.jiangys.tool.idea.services.TabSelectedService;
-import org.jiangys.tool.idea.services.TimeService;
-import org.jiangys.tool.idea.services.TreeViewService;
+import org.jiangys.tool.idea.services.*;
 import org.jiangys.tool.idea.utils.JsonUtil;
 
 import javax.swing.*;
@@ -22,9 +19,11 @@ public class ToolBoxWindow {
     private final TabSelectedService tabSelectedService;
     private final TreeViewService treeViewService;
 
+    private final DateCalculatorService dateCalculatorService;
+
     private JPanel rootPanel;
-    private JTabbedPane jsonTabbedPane;
-    private JTabbedPane cronTabbedPane;
+    private JTabbedPane mainTabbedPane;
+    private JTabbedPane jsonToolTabbedPane;
     private JButton compressButton;
     private JButton deCompressButton;
     private JTextArea formattedJsonTextarea;
@@ -56,6 +55,25 @@ public class ToolBoxWindow {
     private JTextField showTimeTextField3;
     private JTextField showTimeTextField2;
     private JTextField showTimeTextField1;
+    private JTextField diffDayYearText1;
+    private JTextField diffDayMonthText1;
+    private JTextField diffDayDayText1;
+    private JTextField diffDayYearText2;
+    private JTextField diffDayMonthText2;
+    private JTextField diffDayDayText2;
+    private JTextArea diffDayResultText;
+    private JButton diifCalculateButton;
+    private JButton setAsTodayButton1;
+    private JButton setAsTodayButton2;
+    private JTextField addSubDayYearText;
+    private JTextField addSubDayMonthText;
+    private JTextField addSubDayDayText;
+    private JButton setAsTodayButton3;
+    private JComboBox addSubDayTypeComboBox;
+    private JTextField addSubDayNumberText;
+    private JComboBox addSubDayUnitComboBox;
+    private JButton addSubDayCalculateButton;
+    private JTextArea addSubDayResultText;
 
 
     public ToolBoxWindow(ToolWindow toolWindow) {
@@ -99,6 +117,7 @@ public class ToolBoxWindow {
         crontabService = new CrontabService(this);
         timeService = new TimeService(this);
         tabSelectedService = new TabSelectedService(this);
+        dateCalculatorService = new DateCalculatorService(this);
     }
 
     public JPanel getRootPanel() {
@@ -135,7 +154,7 @@ public class ToolBoxWindow {
     }
 
     public JTabbedPane getJsonTabbedPane() {
-        return jsonTabbedPane;
+        return mainTabbedPane;
     }
 
 
@@ -187,30 +206,6 @@ public class ToolBoxWindow {
         return timeToTimestampUnitComboBox;
     }
 
-    public JComboBox getComboBox5() {
-        return timeShowZoneComboBox;
-    }
-
-    public JTextField getTextField1() {
-        return showTimeTextField5;
-    }
-
-    public JTextField getTextField2() {
-        return showTimeTextField4;
-    }
-
-    public JTextField getTextField3() {
-        return showTimeTextField3;
-    }
-
-    public JTextField getTextField4() {
-        return showTimeTextField2;
-    }
-
-    public JTextField getTextField5() {
-        return showTimeTextField1;
-    }
-
     public TimeService getTimeService() {
         return timeService;
     }
@@ -241,5 +236,81 @@ public class ToolBoxWindow {
 
     public JButton getTransformTimeToTimestampButton() {
         return transformTimeToTimestampButton;
+    }
+
+    public JTextField getDiffDayYearText1() {
+        return diffDayYearText1;
+    }
+
+    public JTextField getDiffDayMonthText1() {
+        return diffDayMonthText1;
+    }
+
+    public JTextField getDiffDayDayText1() {
+        return diffDayDayText1;
+    }
+
+    public JTextField getDiffDayYearText2() {
+        return diffDayYearText2;
+    }
+
+    public JTextField getDiffDayMonthText2() {
+        return diffDayMonthText2;
+    }
+
+    public JTextField getDiffDayDayText2() {
+        return diffDayDayText2;
+    }
+
+    public JTextArea getDiffDayResultText() {
+        return diffDayResultText;
+    }
+
+    public JButton getDiifCalculateButton() {
+        return diifCalculateButton;
+    }
+
+    public JButton getSetAsTodayButton1() {
+        return setAsTodayButton1;
+    }
+
+    public JButton getSetAsTodayButton2() {
+        return setAsTodayButton2;
+    }
+
+    public JTextField getAddSubDayYearText() {
+        return addSubDayYearText;
+    }
+
+    public JTextField getAddSubDayMonthText() {
+        return addSubDayMonthText;
+    }
+
+    public JTextField getAddSubDayDayText() {
+        return addSubDayDayText;
+    }
+
+    public JButton getSetAsTodayButton3() {
+        return setAsTodayButton3;
+    }
+
+    public JComboBox getAddSubDayTypeComboBox() {
+        return addSubDayTypeComboBox;
+    }
+
+    public JTextField getAddSubDayNumberText() {
+        return addSubDayNumberText;
+    }
+
+    public JComboBox getAddSubDayUnitComboBox() {
+        return addSubDayUnitComboBox;
+    }
+
+    public JButton getAddSubDayCalculateButton() {
+        return addSubDayCalculateButton;
+    }
+
+    public JTextArea getAddSubDayResultText() {
+        return addSubDayResultText;
     }
 }
