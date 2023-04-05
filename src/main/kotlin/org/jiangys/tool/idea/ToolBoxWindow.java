@@ -7,6 +7,8 @@ import org.jiangys.tool.idea.utils.JsonUtil;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author jiangyuesong
@@ -20,6 +22,8 @@ public class ToolBoxWindow {
     private final TreeViewService treeViewService;
 
     private final DateCalculatorService dateCalculatorService;
+
+    private final JdkDeserializeService deserializeService;
 
     private JPanel rootPanel;
     private JTabbedPane mainTabbedPane;
@@ -122,6 +126,13 @@ public class ToolBoxWindow {
         timeService = new TimeService(this);
         tabSelectedService = new TabSelectedService(this);
         dateCalculatorService = new DateCalculatorService(this);
+        deserializeService=new JdkDeserializeService(this);
+        transformButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                deserializeService.tmp(e,transformButton);
+            }
+        });
     }
 
     public JPanel getRootPanel() {
