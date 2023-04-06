@@ -8,10 +8,12 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
 
+    <resource-bundle>messages.MyBundle</resource-bundle>
+
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="org.jiangys.tool.idea.services.MyApplicationService"/>
         <projectService serviceImplementation="org.jiangys.tool.idea.services.MyProjectService"/>
-        <toolWindow id="TooBoxJ" secondary="true" icon="AllIcons.General.Modified" anchor="bottom"
+        <toolWindow id="TooBoxJ" secondary="true" icon="MyIcons.ToolIcon" anchor="bottom"
                     factoryClass="org.jiangys.tool.idea.ToolBoxWindowFactory"/>
     </extensions>
 

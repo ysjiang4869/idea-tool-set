@@ -8,8 +8,12 @@ import com.intellij.ui.content.ContentFactory
 class ToolBoxWindowFactory : ToolWindowFactory {
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
         val myWindow = ToolBoxWindow(toolWindow)
-        val contentFactory = ContentFactory.SERVICE.getInstance()
         val content = contentFactory.createContent(myWindow.rootPanel, "", false)
         toolWindow.contentManager.addContent(content)
     }
+
+    private val contentFactory = ContentFactory.SERVICE.getInstance()
+
+//    override fun shouldBeAvailable(project: Project) = true
+
 }

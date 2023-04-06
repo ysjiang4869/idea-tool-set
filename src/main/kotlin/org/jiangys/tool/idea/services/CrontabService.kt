@@ -7,6 +7,7 @@ import com.cronutils.model.definition.CronDefinitionBuilder
 import com.cronutils.model.time.ExecutionTime
 import com.cronutils.parser.CronParser
 import org.jiangys.tool.idea.ToolBoxWindow
+import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
@@ -16,6 +17,8 @@ import javax.swing.ButtonGroup
 class CrontabService(private val mainWindow: ToolBoxWindow) : TabService {
 
     private val dateFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
+
+    private val loadExplainFailedMsg = "资源加载失败"
 
     init {
         mainWindow.cronNextTimes.lineWrap = true
@@ -29,21 +32,24 @@ class CrontabService(private val mainWindow: ToolBoxWindow) : TabService {
         mainWindow.linuxRadioButton.addActionListener {
             mainWindow.cronTextField.text = "0 */12 * * *"
             mainWindow.cronNextTimes.text = ""
-            mainWindow.cronExplain.text = this::class.java.getResource("/cron_linux.txt").readText()
+            mainWindow.cronExplain.text =
+                this::class.java.getResource("/cron_linux.txt")?.readText() ?: loadExplainFailedMsg
             mainWindow.cronExplain.caretPosition = 0
         }
         mainWindow.javaSpringRadioButton.actionCommand = "javaSpring"
         mainWindow.javaSpringRadioButton.addActionListener {
             mainWindow.cronTextField.text = "0 0 18 28-31 * ?"
             mainWindow.cronNextTimes.text = ""
-            mainWindow.cronExplain.text = this::class.java.getResource("/cron_spring.txt").readText()
+            mainWindow.cronExplain.text =
+                this::class.java.getResource("/cron_spring.txt")?.readText() ?: loadExplainFailedMsg
             mainWindow.cronExplain.caretPosition = 0
         }
         mainWindow.javaQuartzRadioButton.actionCommand = "javaQuartz"
         mainWindow.javaQuartzRadioButton.addActionListener {
             mainWindow.cronTextField.text = "0 0 18 L * ?"
             mainWindow.cronNextTimes.text = ""
-            mainWindow.cronExplain.text = this::class.java.getResource("/cron_quartz.txt").readText()
+            mainWindow.cronExplain.text =
+                this::class.java.getResource("/cron_quartz.txt")?.readText() ?: loadExplainFailedMsg
             mainWindow.cronExplain.caretPosition = 0
         }
 
@@ -84,6 +90,17 @@ class CrontabService(private val mainWindow: ToolBoxWindow) : TabService {
                 zonedDateTime = nextTime.get().plusNanos(1)
             }
         })
+        mainWindow.linuxRadioButton.isSelected = true
+        cronGroup.setSelected(mainWindow.linuxRadioButton.model, true)
+        mainWindow.linuxRadioButton.actionListeners.forEach { listener ->
+            listener.actionPerformed(
+                ActionEvent(
+                    this,
+                    ActionEvent.ACTION_PERFORMED,
+                    ""
+                )
+            )
+        }
     }
 
     override fun initActive() {
