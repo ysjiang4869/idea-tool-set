@@ -7,11 +7,10 @@
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
+    <resource-bundle>messages.MyBundle</resource-bundle>
+
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="org.jiangys.tool.idea.services.MyApplicationService"/>
-        <projectService serviceImplementation="org.jiangys.tool.idea.services.MyProjectService"/>
-        <toolWindow id="TooBoxJ" secondary="true" icon="AllIcons.General.Modified" anchor="bottom"
-                    factoryClass="org.jiangys.tool.idea.ToolBoxWindowFactory"/>
+        <toolWindow factoryClass="org.jetbrains.plugins.template.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
     <applicationListeners>
