@@ -10,7 +10,10 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="org.jetbrains.plugins.template.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <applicationService serviceImplementation="org.jiangys.tool.idea.services.MyApplicationService"/>
+        <projectService serviceImplementation="org.jiangys.tool.idea.services.MyProjectService"/>
+        <toolWindow id="TooBoxJ" secondary="true" icon="MyIcons.ToolIcon" anchor="bottom"
+                    factoryClass="org.jiangys.tool.idea.ToolBoxWindowFactory"/>
     </extensions>
 
     <applicationListeners>
