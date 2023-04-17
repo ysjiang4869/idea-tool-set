@@ -20,6 +20,7 @@ public class ToolBoxWindow {
     private final TreeViewService treeViewService;
 
     private final DateCalculatorService dateCalculatorService;
+    private final RegexService regexService;
 
     private JPanel rootPanel;
     private JTabbedPane mainTabbedPane;
@@ -74,13 +75,13 @@ public class ToolBoxWindow {
     private JComboBox addSubDayUnitComboBox;
     private JButton addSubDayCalculateButton;
     private JTextArea addSubDayResultText;
-    private JTextField textField1;
-    private JCheckBox allMatchGCheckBox;
-    private JCheckBox singleLineCheckBox;
+    private JTextField regexInputTextField;
+    private JCheckBox matchAllCheckBox;
+    private JCheckBox dotMatchAllCheckBox;
     private JCheckBox ignoreCaseCheckBox;
     private JCheckBox multiLineCheckBox;
-    private JTextArea textArea1;
-    private JTextArea textArea2;
+    private JTextArea matchResultTextArea;
+    private JTextArea testCasesTextArea;
 
 
     public ToolBoxWindow(ToolWindow toolWindow) {
@@ -125,6 +126,7 @@ public class ToolBoxWindow {
         timeService = new TimeService(this);
         tabSelectedService = new TabSelectedService(this);
         dateCalculatorService = new DateCalculatorService(this);
+        regexService=new RegexService(this);
     }
 
     public JPanel getRootPanel() {
@@ -319,5 +321,33 @@ public class ToolBoxWindow {
 
     public JTextArea getAddSubDayResultText() {
         return addSubDayResultText;
+    }
+
+    public JTextField getRegexInputTextField() {
+        return regexInputTextField;
+    }
+
+    public JCheckBox getMatchAllCheckBox() {
+        return matchAllCheckBox;
+    }
+
+    public JCheckBox getDotMatchAllCheckBox() {
+        return dotMatchAllCheckBox;
+    }
+
+    public JCheckBox getIgnoreCaseCheckBox() {
+        return ignoreCaseCheckBox;
+    }
+
+    public JCheckBox getMultiLineCheckBox() {
+        return multiLineCheckBox;
+    }
+
+    public JTextArea getMatchResultTextArea() {
+        return matchResultTextArea;
+    }
+
+    public JTextArea getTestCasesTextArea() {
+        return testCasesTextArea;
     }
 }
