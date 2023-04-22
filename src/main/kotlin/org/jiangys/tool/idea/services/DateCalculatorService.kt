@@ -66,11 +66,11 @@ class DateCalculatorService(private val mainWindow: ToolBoxWindow) : TabService 
     }
 
     override fun initActive() {
-        TODO("Not yet implemented")
+        return
     }
 
     override fun deActive() {
-        TODO("Not yet implemented")
+        return
     }
 
     override fun tabName(): String {
