@@ -82,6 +82,11 @@ public class ToolBoxWindow {
     private JCheckBox multiLineCheckBox;
     private JTextArea matchResultTextArea;
     private JTextArea testCasesTextArea;
+    private JLabel regexEmailLabel;
+    private JLabel regexIpv4Label;
+    private JLabel regexIdCardLabel;
+    private JLabel regexDateLabel;
+    private JLabel regexPhoneNumberLabel;
 
 
     public ToolBoxWindow(ToolWindow toolWindow) {
@@ -349,5 +354,26 @@ public class ToolBoxWindow {
 
     public JTextArea getTestCasesTextArea() {
         return testCasesTextArea;
+    }
+
+
+    public JLabel getRegexEmailLabel() {
+        return regexEmailLabel;
+    }
+
+    public JLabel getRegexIpv4Label() {
+        return regexIpv4Label;
+    }
+
+    public JLabel getRegexIdCardLabel() {
+        return regexIdCardLabel;
+    }
+
+    public JLabel getRegexDateLabel() {
+        return regexDateLabel;
+    }
+
+    public JLabel getRegexPhoneNumberLabel() {
+        return regexPhoneNumberLabel;
     }
 }
