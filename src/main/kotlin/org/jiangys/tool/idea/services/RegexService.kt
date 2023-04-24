@@ -1,16 +1,14 @@
 package org.jiangys.tool.idea.services
 
 import com.intellij.openapi.observable.util.whenTextChanged
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.jiangys.tool.idea.ToolBoxWindow
 import java.awt.Cursor
 import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import java.util.regex.PatternSyntaxException
-import javax.swing.JLabel
-import javax.swing.JTextField
-import javax.swing.text.Document
-import javax.swing.text.PlainDocument
 
 
 /**
