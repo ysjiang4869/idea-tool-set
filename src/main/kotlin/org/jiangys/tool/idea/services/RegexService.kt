@@ -14,7 +14,7 @@ import javax.swing.text.PlainDocument
 
 
 /**
- * todo 1 regex grammars 2 ui improve 3 common examples
+ * todo 1 regex grammars
  */
 
 class RegexService(private val mainWindow: ToolBoxWindow) : TabService {
