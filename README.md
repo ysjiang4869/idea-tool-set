@@ -12,15 +12,30 @@ A tool for daily develop use!
 This plugin is build for normal daily develop use. Include many useful tools every engineer need.
 You can handle json, convert time, debug cron, generate random json from class and so on.
 
-Tool List And Roadmap:
+Features:
+- Json tool: tree view, compact, and extract.
+- Cron tool: write cron and valid, see the run times.
+- Time tool: get current timestamp, convert between ts and date, with or without timezones.
+- Date calculator: calc how many days between two date, add or sub days.
+- Regex tool: write and valid regex.
+
+Roadmap:
 - [ ] json tool
   - [x] simplify and pretty
   - [x] treeView
   - [ ] to Java object
+  - [ ] beautify the json view
+  - [ ] add json search
 - [x] date tool
   - [x] parse timestamp
 - [x] cron tool
 - [ ] Java object to random value json
+- [x] regex tool
+- [ ] encode, decode
+- [ ] conversion of number systems
+- [ ] curl to java code and vice versa
+- [ ] jdk deserialize: technic research seems can't realize
+- [ ] i18n support
 
 ... , if you have any idea or need, please open pull request at [github](https://github.com/ysjiang4869/idea-tool-set/pulls).
 No more need to open your browser to use tool again!
@@ -46,17 +61,4 @@ Plugin based on the [IntelliJ Platform Plugin Template][template].
 
 Thanks for [Jetbrains](https://www.jetbrains.com/community/opensource/#support) provide the excellent develop tool.
 ![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
-
-## Template ToDo list
-
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [x] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml)
-  and [sources package](/src/main/kotlin).
-- [x] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [x] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate)
-  for the first time.
-- [x] Set the Plugin ID in the above README badges.
-- [x] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [x] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified
-  about releases containing new features and fixes.
 
