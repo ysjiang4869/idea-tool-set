@@ -11,14 +11,13 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="org.jiangys.tool.idea.services.MyApplicationService"/>
-        <projectService serviceImplementation="org.jiangys.tool.idea.services.MyProjectService"/>
+<!--        <projectService serviceImplementation="org.jiangys.tool.idea.services.MyProjectService"/>-->
         <toolWindow id="TooBoxJ" secondary="true" icon="MyIcons.ToolIcon" anchor="bottom"
                     factoryClass="org.jiangys.tool.idea.ToolBoxWindowFactory"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="org.jiangys.tool.idea.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <listener class="org.jiangys.tool.idea.listeners.DynamicListener" topic="com.intellij.ide.plugins.DynamicPluginListener"/>
     </applicationListeners>
 
 

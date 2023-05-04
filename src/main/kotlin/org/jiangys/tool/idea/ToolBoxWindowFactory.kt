@@ -12,7 +12,7 @@ class ToolBoxWindowFactory : ToolWindowFactory {
         toolWindow.contentManager.addContent(content)
     }
 
-    private val contentFactory = ContentFactory.SERVICE.getInstance()
+    private val contentFactory = ContentFactory.getInstance()
 
 //    override fun shouldBeAvailable(project: Project) = true
 
